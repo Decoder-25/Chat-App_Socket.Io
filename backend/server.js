@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const colors = require('colors');
 const chats = require("./data/data");
 const connectDB = require('./config/db');
@@ -10,6 +11,8 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const app = express();
 dotenv.config();
 connectDB();
+
+app.use(cors());
 
 app.use(express.json());
 
