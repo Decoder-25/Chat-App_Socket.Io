@@ -7,6 +7,7 @@ import axios from "axios";
 import { getSender } from "../config/ChatLogics";
 import ChatLoading from "./ChatLoading";
 import { ChatState } from "../context/ChatProvider";
+import GroupChatModal from "./miscellaneous/GroupChatModal";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
@@ -66,6 +67,7 @@ const MyChats = ({ fetchAgain }) => {
         alignItems="center"
       >
         My Chats
+        <GroupChatModal>
           <Button
             display="flex"
             fontSize={{ base: "17px", md: "10px", lg: "15px" }}
@@ -73,6 +75,7 @@ const MyChats = ({ fetchAgain }) => {
           >
             New Group Chat
           </Button>
+        </GroupChatModal>
       </Box>
       <Box
         display="flex"
@@ -80,7 +83,7 @@ const MyChats = ({ fetchAgain }) => {
         p={3}
         bg="#F8F8F8"
         w="100%"
-        h="550px"
+        h="100%"
         borderRadius="lg"
         overflowY="hidden"
       >
